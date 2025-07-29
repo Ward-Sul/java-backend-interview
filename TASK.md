@@ -14,11 +14,11 @@ This project contains intentional flaws and bad practices that you are expected 
 **Story Points:** 3
 
 ### Description
-Create a new Author entity to establish proper relationships between books and their authors.
+Create a new Author entity to establish proper relationships between a book and its author.
 
 ### Acceptance Criteria
 - [ ] Create new `Author` entity with appropriate fields (id, name, biography, etc.)
-- [ ] Establish relationship between `Book` and `Author` entities
+- [ ] Establish relationship between `Book` and `Author` entities knowing that a book can have only one author.
 - [ ] Update existing `Book` entity to include author reference
 - [ ] Ensure proper JPA annotations and relationships
 
@@ -36,16 +36,14 @@ Create a new Author entity to establish proper relationships between books and t
 **Story Points:** 5
 
 ### Description
-Implement an endpoint to retrieve a list of the highest-rated book(s) for each author.
+Implement an endpoint to retrieve the highest-rated book for all authors.
 
 ### Acceptance Criteria
 - [ ] Create endpoint: `GET /api/books/top-rated-by-author`
-- [ ] Return a list of the highest-rated book for each author with the author name
+- [ ] Return the highest-rated book for each author with the author name
 
 ### Technical Notes
-- Use Spring Data JPA for efficient querying
-- Consider using `@Query` annotation for complex aggregation
-- Return JSON response with author and book details
+- Return JSON List with each object being the author name and the book name
 
 ---
 
@@ -89,6 +87,7 @@ Implement logic to calculate and return average ratings for each reviewer across
 - [ ] Return `Map<String, Double>` where key is reviewer name and value is average rating
 
 ### Technical Notes
+- Gor the sake of this task, load all the data to memory and do the aggregation on the application layer.
 - Use Spring Data JPA aggregation functions
 - Consider performance for large datasets
 - Round average ratings to 2 decimal places

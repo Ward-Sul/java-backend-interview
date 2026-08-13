@@ -22,10 +22,6 @@ Create a new Author entity to establish proper relationships between a book and 
 - [ ] Update existing `Book` entity to include author reference
 - [ ] Ensure proper JPA annotations and relationships
 
-### Technical Notes
-- Use JPA annotations for entity mapping
-- Consider one-to-many relationship (one author can have many books)
-
 ---
 
 ## 🎯 Task 2: Top-Rated Books by Author Endpoint
@@ -41,9 +37,6 @@ Implement an endpoint to retrieve the highest-rated book for all authors.
 ### Acceptance Criteria
 - [ ] Create endpoint: `GET /api/books/top-rated-by-author`
 - [ ] Return the highest-rated book for each author with the author name
-
-### Technical Notes
-- Return JSON List with each object being the author name and the book name
 
 ---
 
@@ -66,10 +59,6 @@ Implement a flexible search feature for books with dynamic filtering capabilitie
 - [ ] Include proper validation for filter parameters
 - [ ] Add comprehensive unit tests
 
-### Technical Notes
-- Ensure the system is easily extensible for new filters
-- Use proper pagination for large result sets
-
 ---
 
 ## 🎯 Task 4: Reviewer Average Ratings Aggregation
@@ -85,12 +74,6 @@ Implement logic to calculate and return average ratings for each reviewer across
 ### Acceptance Criteria
 - [ ] Create endpoint: `GET /api/reviews/reviewer-averages`
 - [ ] Return `Map<String, Double>` where key is reviewer name and value is average rating
-
-### Technical Notes
-- Gor the sake of this task, load all the data to memory and do the aggregation on the application layer.
-- Use Spring Data JPA aggregation functions
-- Consider performance for large datasets
-- Round average ratings to 2 decimal places
 
 ---
 
@@ -110,9 +93,6 @@ Implement notification system for new review submissions.
 - [ ] Ensure notification is sent asynchronously
 - [ ] Include review details in notification
 - [ ] Add unit tests for notification logic
-
-### Technical Notes
-- Error in sending notifications should not effect the the transaction for submitting the review
 
 ---
 
@@ -135,12 +115,6 @@ Implement the core logic for users to borrow books with specified borrow and ret
 - [ ] Include proper validation and error handling
 - [ ] Add unit tests for borrowing logic
 
-### Technical Notes
-- Use existing `BorrowRecord` entity
-- Implement proper transaction management
-- Consider concurrent access scenarios
-- Validate dates (return date should be after borrow date)
-
 ---
 
 ## 🎯 Task 7: Book Borrowing Test Case
@@ -160,11 +134,6 @@ Write comprehensive test case for the book borrowing happy path scenario.
 - [ ] Test with valid borrow and return dates
 - [ ] Ensure test covers all success scenarios
 
-### Technical Notes
-- Use @SpringBootTest or @DataJpaTest
-- Mock external dependencies if needed
-- Use proper test data setup and cleanup
-
 ---
 
 ## 🎯 Task 8: Rare Book Borrowing Support
@@ -178,15 +147,11 @@ Write comprehensive test case for the book borrowing happy path scenario.
 Implement extensible system to support different types of book borrowing, starting with rare books.
 
 ### Acceptance Criteria
-- [ ] Design extensible borrowing strategy pattern
+- [ ] Design extensible borrowing system.
 - [ ] Implement rare book borrowing (quantity < 2)
 - [ ] Create framework for future borrowing types
 - [ ] Ensure system is open for extension, closed for modification
 - [ ] Add proper validation for rare book borrowing
-
-### Technical Notes
-- Implement proper validation rules for each strategy
-- Make the system easily extensible for future borrowing types
 
 ---
 

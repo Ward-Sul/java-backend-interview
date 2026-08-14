@@ -1,15 +1,12 @@
 package com.enhance.interview;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
-import jakarta.persistence.OneToMany;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -20,9 +17,6 @@ public class User {
 
     private String name;
     private String email;
-
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Book> books;
 
     @Lob
     private byte[] profilePicture;
@@ -57,14 +51,6 @@ public class User {
 
     public void setProfilePicture(byte[] profilePicture) {
         this.profilePicture = profilePicture;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
     }
 
     @Override

@@ -5,7 +5,6 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 import java.util.List;
@@ -22,9 +21,6 @@ public class Book {
     private List<Review> reviews;
 
     private Integer quantityInStock;
-
-    @ManyToOne
-    private User user;
 
     public Long getId() {
         return id;
@@ -58,18 +54,10 @@ public class Book {
         this.quantityInStock = quantityInStock;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     @Override
     public String toString() {
         return "Book [id=" + id + ", title=" + title + ", reviews=" + reviews + ", quantityInStock=" + quantityInStock
-                + ", user=" + user + "]";
+                + "]";
     }
 
 }
